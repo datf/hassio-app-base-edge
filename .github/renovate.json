@@ -1,11 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
-  ],
-  "labels": [
-    "dependencies"
-  ],
+  "extends": ["config:recommended"],
+  "labels": ["dependencies"],
   "assigneesFromCodeOwners": true,
   "customManagers": [
     {
@@ -71,14 +67,9 @@
     },
     {
       "groupName": "App base image",
-      "matchUpdateTypes": [
-        "minor",
-        "patch"
-      ],
+      "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
     }
   ],
-  "baseBranchPatterns": [
-    "main"
-  ]
+  "baseBranchPatterns": ["main"]
 }
