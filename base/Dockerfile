@@ -19,15 +19,16 @@ ENV \
     S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0 \
     S6_CMD_WAIT_FOR_SERVICES=1 \
     YARN_HTTP_TIMEOUT=1000000 \
-    TERM="xterm-256color" 
+    TERM="xterm-256color"
 
 # Set shell
 SHELL ["/bin/ash", "-o", "pipefail", "-c"]
 
 # Enable testing repo
-RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
-
-RUN apk update
+RUN \
+    echo "https://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
+    \
+    && apk update
 
 # Install base system
 ARG BUILD_ARCH=amd64
