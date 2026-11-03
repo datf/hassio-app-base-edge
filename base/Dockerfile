@@ -24,6 +24,11 @@ ENV \
 # Set shell
 SHELL ["/bin/ash", "-o", "pipefail", "-c"]
 
+# Enable testing repo
+RUN echo "https://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
+
+RUN apk update
+
 # Install base system
 ARG BUILD_ARCH=amd64
 ARG BASHIO_VERSION="v0.19.0"
